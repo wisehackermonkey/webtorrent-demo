@@ -1,0 +1,25 @@
+{
+  "name": "webtorrent-demo",
+  "version": "1.0.0",
+  "description": "website that uses webtorrent to host the the site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wisehackermonkey/webtorrent-demo.git"
+  },
+  "keywords": [
+    "webtorrent",
+    "wisehackermonkey",
+    "torrent",
+    "website"
+  ],
+  "author": "wisehackermonkey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wisehackermonkey/webtorrent-demo/issues"
+  },
+  "homepage": "https://github.com/wisehackermonkey/webtorrent-demo#readme"
+}

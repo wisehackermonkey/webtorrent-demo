@@ -30,6 +30,7 @@
 ```bash
 npm install --global browserify
 npm install ramda --save
+browserify src/main.js -o ./public/js/bundle.js
 ```
 
 <!-- ----------------- -->
