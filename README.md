@@ -28,8 +28,16 @@
 
 # Installation
 ```bash
-
-
+ git clone https://github.com/wisehackermonkey/webtorrent-demo.git
+cd  webtorrent-demo/
+npm install 
+npm install --only=dev
+# minimal
+npm config set user 0
+npm config set unsafe-perm true
+npm install --global webtorrent-hybrid
+# full
+npm install --global webtorrent-hybrid budo beefy watchify browserify exorcist
 ```
 
 <!-- ----------------- -->
