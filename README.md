@@ -37,7 +37,8 @@ npm config set user 0
 npm config set unsafe-perm true
 npm install --global webtorrent-hybrid
 # full
-npm install --global webtorrent-hybrid budo beefy watchify browserify exorcist
+npm install --global budo webtorrent-hybrid budo beefy watchify browserify exorcist
+npm install --global browserify
 ```
 
 <!-- ----------------- -->
