@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify main.js -o ./bundle.js",
-    "dev":"budo main.js:bundle.js --live --open  --cors"
+    "dev": "budo main.js:bundle.js --live --open  --cors"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
-    "webtorrent": "^0.115.0"
+    "webtorrent": "^0.115.0",
+    "webtorrent-hybrid": "^4.0.3"
   }
 }

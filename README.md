@@ -88,6 +88,22 @@ npm install --save webtorrent
 
 npm install webtorrent-hybrid --global --save-dev
 webtorrent-hybrid
+npm install webtorrent-hybrid --save
+node server.js
+n=logo.png
+
+-a wss://tracker.btorrent.xyz
+-a wss://tracker.openwebtorrent.com
+-a udp://tracker.leechers-paradise.org:6969
+-a udp://tracker.coppersurfer.tk:6969
+-a udp://tracker.opentrackr.org:1337
+-a udp://explodie.org:6969
+-a udp://tracker.empire-js.us:1337
+webtorrent-hybrid seed ./logo.png --announce wss://tracker.openwebtorrent.com  -a wss://tracker.btorrent.xyz -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337 
+
+
+webtorrent-hybrid seed ./banana.jpg --announce wss://tracker.openwebtorrent.com   -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337 
+
 ```
 
 -----------------
