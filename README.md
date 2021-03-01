@@ -37,10 +37,12 @@ npm config set unsafe-perm true
 npm install --global webtorrent-hybrid
 # full
 npm install --global budo webtorrent-hybrid budo beefy watchify browserify exorcist
-npm install --global browserify
+# npm install --global browserify 
 npm run dev
+npm install http-server --global
+http-server 
 ```
-### go to http://localhost:9966
+### go to http://localhost:9966 or :8080
 
 
 <!-- ----------------- -->
@@ -91,6 +93,7 @@ budo main.js:bundle.js --live --open  --cors #--ssl
 npm run dev
 
 
+npm install http-server --save --global
 ```
 ### Running webtorrent
 [WebTorrent API Documentation](https://webtorrent.io/docs)
@@ -115,6 +118,9 @@ webtorrent-hybrid seed ./logo.png --announce wss://tracker.openwebtorrent.com  -
 
 
 webtorrent-hybrid seed ./banana.jpg --announce wss://tracker.openwebtorrent.com   -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337 
+
+webtorrent-hybrid seed ./assets/Artboard1.png --announce wss://tracker.openwebtorrent.com   -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337 
+
 
 ```
 

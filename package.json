@@ -33,6 +33,7 @@
     "watchify": "^4.0.0"
   },
   "dependencies": {
+    "http-server": "^0.12.3",
     "webtorrent": "^0.115.0",
     "webtorrent-hybrid": "^4.0.3"
   }
