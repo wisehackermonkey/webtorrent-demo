@@ -42,7 +42,9 @@ npm install --global beefy
 
 cd public
 beefy ../src/main.js --live
-
+npm run build
+beefy src/main.js  --browserify  --live
+npm run dev
 ```
 
 <!-- ----------------- -->

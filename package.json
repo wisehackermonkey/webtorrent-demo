@@ -4,7 +4,9 @@
   "description": "website that uses webtorrent to host the the site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"browserify src/main.js -o ./public/js/bundle.js",
+    "dev": "beefy src/main.js  --browserify  --live"
   },
   "repository": {
     "type": "git",
