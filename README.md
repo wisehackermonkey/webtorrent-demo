@@ -43,6 +43,7 @@
 -----------------
 # For developers
 ### setting up browserify
+[Getting Started with Browserify ― Scotch.io](https://scotch.io/tutorials/getting-started-with-browserify)
 ```bash
 npm install --global --save-dev browserify
 npm install ramda --save
@@ -61,12 +62,32 @@ beefy ../src/main.js --live
 npm run build
 beefy src/main.js  --browserify  --live
 npm run dev
+
+watchify main.js -o /bundle.js -v ; beefy main.js  --browserify  --live
+
+npm install --save-dev nodemon
+nodemon -e "browserify src/main.js -o ./public/js/bundle.js ;beefy src/main.js --index=./public --cwd ./public --open --live  --browserify"
+
+//beefy src/main.js --index=./public --cwd ./public --open --live  --browserify 
+beefy src/main.js:./public/js/bundle.js --cwd ./public --browserify  --live
+beefy main.js --live --browserify
+
+watchify main.js -o static/bundle.js
+# this ended up working
+[budo - npm](https://www.npmjs.com/package/budo)
+npm install budo --global --save-dev
+budo main.js:bundle.js --live --open  --cors #--ssl
+npm run dev
+
+
 ```
 ### Running webtorrent
 [WebTorrent API Documentation](https://webtorrent.io/docs)
 ```bash
 npm install --save webtorrent
 
+npm install webtorrent-hybrid --global --save-dev
+webtorrent-hybrid
 ```
 
 -----------------
