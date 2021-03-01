@@ -33,6 +33,7 @@ cd  webtorrent-demo/
 npm install 
 npm install --only=dev
 # minimal
+[node.js - sh: 1: node: Permission denied - Stack Overflow](https://stackoverflow.com/questions/51811564/sh-1-node-permission-denied)
 npm config set user 0
 npm config set unsafe-perm true
 npm install --global webtorrent-hybrid
@@ -91,6 +92,7 @@ npm run dev
 ```
 ### Running webtorrent
 [WebTorrent API Documentation](https://webtorrent.io/docs)
+[webtorrent/get-started.md at master · webtorrent/webtorrent](https://github.com/webtorrent/webtorrent/blob/master/docs/get-started.md)
 ```bash
 npm install --save webtorrent
 
