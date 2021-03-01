@@ -28,9 +28,21 @@
 
 # Installation
 ```bash
-npm install --global browserify
+npm install --global --save-dev browserify
 npm install ramda --save
 browserify src/main.js -o ./public/js/bundle.js
+# Debugging
+browserify --debug main.js -o bundle.js
+npm install --global --save-dev exorcist
+browserify main.js --debug | exorcist bundle.map.js > bundle.js
+npm install --global --save-dev watchify
+watchify src/main.js -o ./public/js/bundle.jss -v
+npm install --save-dev beefy
+npm install --global beefy
+
+cd public
+beefy ../src/main.js --live
+
 ```
 
 <!-- ----------------- -->
