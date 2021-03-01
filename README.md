@@ -28,6 +28,22 @@
 
 # Installation
 ```bash
+
+
+```
+
+<!-- ----------------- -->
+<!-- # Screenshots -->
+<!-- - <img src="assets/_____________" width="400">  -->
+<!-- -  -->
+
+
+
+<!-- SETUP -->
+-----------------
+# For developers
+### setting up browserify
+```bash
 npm install --global --save-dev browserify
 npm install ramda --save
 browserify src/main.js -o ./public/js/bundle.js
@@ -46,19 +62,10 @@ npm run build
 beefy src/main.js  --browserify  --live
 npm run dev
 ```
-
-<!-- ----------------- -->
-<!-- # Screenshots -->
-<!-- - <img src="assets/_____________" width="400">  -->
-<!-- -  -->
-
-
-
-<!-- SETUP -->
------------------
-# For developers
-### 
+### Running webtorrent
+[WebTorrent API Documentation](https://webtorrent.io/docs)
 ```bash
+npm install --save webtorrent
 
 ```
 
