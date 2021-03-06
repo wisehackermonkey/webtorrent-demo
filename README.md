@@ -105,7 +105,10 @@ watchify main.js -o static/bundle.js
 # this ended up working
 [budo - npm](https://www.npmjs.com/package/budo)
 npm install budo --global --save-dev
-budo main.js:bundle.js --live --open  --cors #--ssl
+# budo main.js:bundle.js --live --open  --cors #--ssl
+budo src/main.js:public/js/bundle.js --live --open  --cors #--ssl
+budo  --dir public/ src/main.js:public/js/bundle.js --live --open  --cors #--ssl
+
 npm run dev
 
 
@@ -243,7 +246,9 @@ http-server public
         command: ["seed","./cat.jpg","--quiet",.......]
 ```
 ### run  webtorrent-hybrid server
-### docker-compose run webtorrent-hybrid
+```bash
+docker-compose run webtorrent-hybrid
+```
 ### grab the magn: link that it outputs ex:
 ```bash
 magnet:?xt=urn:btih:8a1f08b91487de78d513e17799ac15c75bc864e6&dn=cat.jpg&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=wss%3A%2F%2Ftracker.fastcast.nz
@@ -252,10 +257,27 @@ magnet:?xt=urn:btih:8a1f08b91487de78d513e17799ac15c75bc864e6&dn=cat.jpg&tr=wss%3
 ```javascript
 let torrentId = "magnet:?xt=urn:btih:8a1f08b91487de78d513e17799ac15c75bc864e6&dn=banana2.png&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=wss%3A%2F%2Ftracker.fastcast.nz"
 ```
+### if you gett an error that looks like this it means that you forgot to change the image extention type within src/main.js
+### also change the file ending to match your image type EX: .png with .endsWith('.png') or .jpg with endsWith('.jpg')
+### `src/main.js`
+#### From 
+```javascript
+let file = torrent.files.find(function (file) {
+......
+    return file.name.endsWith('.png')
+  })
+```
+#### to
+```javascript
+let file = torrent.files.find(function (file) {
+......
+    return file.name.endsWith('.jpg')
+  })
+```
 ### rebuild and run docker-compose
 ```bash
 docker-compose build
-
+docker-compose down
 docker-compose up -d
 ```
 ### visit 

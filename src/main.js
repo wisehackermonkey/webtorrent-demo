@@ -17,7 +17,7 @@ client.add(torrentId, function (torrent) {
   // Torrents can contain many files. Let's use the .mp4 file
   let file = torrent.files.find(function (file) {
     console.log("works")
-    return file.name.endsWith('.jpg')
+    return file.name.endsWith('.png')
   })
 
   client.seed(file, function (torrent) {
