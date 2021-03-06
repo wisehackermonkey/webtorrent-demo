@@ -1,10 +1,14 @@
-FROM node:12.18-alpine
+FROM node:latest
 ENV NODE_ENV=production
-WORKDIR /usr/src/app
+WORKDIR /app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN  npm --global config set user root && npm install --production --silent && mv node_modules ../
+RUN npm install && npm install -g browserify http-server &&  mv node_modules ../
+# FROM schaurian/webtorrent-hybrid:latest
 COPY . .
-RUN npm --global config set user root && \
-    npm install --global --unsafe-perm browserify && browserify ./main.js -o ./bundle.js
+RUN browserify src/main.js -o ./public/js/bundle.js
+RUN python3 -V
+RUN ls
 EXPOSE 8080
-CMD ["node", "src/main.js"]
+# [http-server - npm](https://www.npmjs.com/package/http-server)
+# CMD ["python3","-m","http.server","8000","--directory","public"]
+CMD ["http-server","public"]

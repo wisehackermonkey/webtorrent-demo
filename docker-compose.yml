@@ -1,13 +1,24 @@
-version: '3.4'
-
+version: '3.3'
 services:
-  webtorrentdemo:
-    restart: always
-    image: webtorrentdemo
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
-    ports:
-      - 9966:8080
+    webtorrent-hybrid:
+        restart: always
+        build:
+            context: .
+            dockerfile: ./Dockerfile.Image_hoster
+        volumes:
+            - './images:/webtorrent'
+        ports:
+            - '9966:8000'
+        image: 'schaurian/webtorrent-hybrid:latest'
+        # [How to pass arguments to entrypoint in docker-compose.yml - Stack Overflow](https://stackoverflow.com/questions/37366857/how-to-pass-arguments-to-entrypoint-in-docker-compose-yml)
+        command: ["seed","./banana2.png","--quiet","--announce","wss://tracker.openwebtorrent.com","-a","wss://tracker.btorrent.xyz","-a","wss://tracker.openwebtorrent.com","-a","udp://tracker.leechers-paradise.org:6969","-a","udp://tracker.coppersurfer.tk:6969","-a","udp://tracker.opentrackr.org:1337","-a","udp://explodie.org:6969","-a","udp://tracker.empire-js.us:1337"]
+    webtorrentdemo:
+        restart: always
+        image: webtorrentdemo
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        environment:
+            NODE_ENV: production
+        ports:
+            - 8080:8080
