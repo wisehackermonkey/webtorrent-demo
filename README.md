@@ -116,6 +116,93 @@ webtorrent-hybrid seed ./banana.jpg --announce wss://tracker.openwebtorrent.com 
 
 ```
 
+# How to build webtorrent image seeding (hosting) container
+```bash
+cd ./docker-torrent-image-hosting
+docker build -t wisehackermonkey/docker-torrent-image-hosting .
+#docker run -it --net=host -v ${PWD}:/srv/webtorrent wblankenship/webtorrent
+
+docker run -it schaurian/webtorrent-hybrid:latest  -h
+docker run -it  -v webtorrent:/webtorrent --rm -p 8000:8000 schaurian/webtorrent-hybrid:latest download "adbabc7ec29526fa31446847e5bb14310652592b" --keep-seeding
+
+
+docker-compose run webtorrent-hybrid 'download "adbabc7ec29526fa31446847e5bb14310652592b" --keep-seeding'
+
+docker-compose run webtorrent-hybrid 'seed ./logo.png --announce wss://tracker.openwebtorrent.com  -a wss://tracker.btorrent.xyz -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337 '
+
+
+# linux
+docker run -it  --rm -P `
+--restart=always `
+-v ${PWD}/docker-torrent-image-hosting:/webtorrent`
+schaurian/webtorrent-hybrid:latest seed "/webtorrent/logo.png"  --quiet `
+--announce wss://tracker.openwebtorrent.com `
+-a wss://tracker.btorrent.xyz `
+-a wss://tracker.openwebtorrent.com `
+-a udp://tracker.leechers-paradise.org:6969 `
+-a udp://tracker.coppersurfer.tk:6969 `
+-a udp://tracker.opentrackr.org:1337 `
+-a udp://explodie.org:6969 `
+-a udp://tracker.empire-js.us:1337
+
+
+# Powershell
+docker run -it  --rm -P `
+--restart=always `
+-v ${PWD}/docker-torrent-image-hosting:/webtorrent`
+schaurian/webtorrent-hybrid:latest seed "/webtorrent/logo.png"  --quiet `
+--announce wss://tracker.openwebtorrent.com `
+-a wss://tracker.btorrent.xyz `
+-a wss://tracker.openwebtorrent.com `
+-a udp://tracker.leechers-paradise.org:6969 `
+-a udp://tracker.coppersurfer.tk:6969 `
+-a udp://tracker.opentrackr.org:1337 `
+-a udp://explodie.org:6969 `
+-a udp://tracker.empire-js.us:1337
+
+
+docker run -it  -v ${PWD}/docker-torrent-image-hosting:/webtorrent --rm -p 8000:8000 schaurian/webtorrent-hybrid:latest seed "/webtorrent/logo.png"  --quiet --announce wss://tracker.openwebtorrent.com  -a wss://tracker.btorrent.xyz -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337
+
+docker-compose run webtorrent-hybrid seed "/webtorrent/banana.jpg"  --quiet --announce wss://tracker.openwebtorrent.com  -a wss://tracker.btorrent.xyz -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337
+
+
+docker-compose run webtorrent-hybrid seed "/webtorrent/banana.jpg"  --quiet --announce wss://tracker.openwebtorrent.com  -a wss://tracker.btorrent.xyz -a wss://tracker.openwebtorrent.com -a udp://tracker.leechers-paradise.org:6969 -a udp://tracker.coppersurfer.tk:6969 -a udp://tracker.opentrackr.org:1337 -a udp://explodie.org:6969 -a udp://tracker.empire-js.us:1337
+
+docker-compose up
+
+
+
+----
+try 2
+cd ./docker-torrent-image-hosting
+docker build -t wisehackermonkey/docker-torrent-image-hosting .
+docker run -it --rm -P -v ${PWD}/:/webtorrent wisehackermonkey/docker-torrent-image-hosting
+
+```
+### try 3 now ith docker compose
+```bash
+docker-compose build 
+docker-compose up
+```
+### how to seed multiple files
+```bash
+webtorrent-hybrid seed ./logo.png ./banana.jpg
+```
+
+
+### continerizing broswerfiy build process
+```bash
+node ./node_modules/browserify/bin/browserify  main.js -o ./public/js/bundle.js
+docker-compose build 
+docker-compose up
+
+
+npm i -g serve    
+# [Node.js quick file server (static files over HTTP) - Stack Overflow](https://stackoverflow.com/questions/16333790/node-js-quick-file-server-static-files-over-http)
+# serve public -p 8000 -d true
+serve ${PWD}\\public -p 8000 -d true
+http-server public
+```
 -----------------
 # Contributors
 

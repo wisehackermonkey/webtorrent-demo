@@ -1,0 +1,6 @@
+FROM schaurian/webtorrent-hybrid:latest
+COPY ./images .
+# COPY . .
+EXPOSE 8000
+WORKDIR /webtorrent
+ENTRYPOINT ["/usr/local/bin/webtorrent-hybrid"]
