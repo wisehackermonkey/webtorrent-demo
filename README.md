@@ -203,6 +203,40 @@ npm i -g serve
 serve ${PWD}\\public -p 8000 -d true
 http-server public
 ```
+# how to host a new image
+### add image to images/*
+### `example cat.jpg`
+### change docker-compose.yaml
+
+#### from
+```bash
+        image: 'schaurian/webtorrent-hybrid:latest'
+        command: ["seed","./banana2.png","--quiet",.......]
+```
+#### to
+```bash
+        image: 'schaurian/webtorrent-hybrid:latest'
+        command: ["seed","./cat.jpg","--quiet",.......]
+```
+### run  webtorrent-hybrid server
+### docker-compose run webtorrent-hybrid
+### grab the magn: link that it outputs ex:
+```bash
+magnet:?xt=urn:btih:8a1f08b91487de78d513e17799ac15c75bc864e6&dn=cat.jpg&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=wss%3A%2F%2Ftracker.fastcast.nz
+```
+### modify ./src/main.js set the  verable `let torrentId ="..."` to be the result of the magnit link from prevois step
+```javascript
+let torrentId = "magnet:?xt=urn:btih:8a1f08b91487de78d513e17799ac15c75bc864e6&dn=banana2.png&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=wss%3A%2F%2Ftracker.fastcast.nz"
+```
+### rebuild and run docker-compose
+```bash
+docker-compose build
+
+docker-compose up -d
+```
+### visit 
+## Success !!!
+<br>
 -----------------
 # Contributors
 
