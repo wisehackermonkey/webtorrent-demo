@@ -2,29 +2,56 @@
 ----
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<img src="assets/2021-03-01-13-06-51.png" width="400">
+
+<img src="assets/animation_of_creation_v1.gif" width="400">
 <h2 align="center"> website that uses webtorrent to host the image files for the site</h2>
 <!-- <h4 align="center">________________________</h4> -->
 
 # Quick start
-### __________________
-<!-- 
+### Run with docker
+
 ##### __________________________
 ```bash
+cd ~
+git clone https://github.com/wisehackermonkey/webtorrent-demo.git
+cd webtorrent-demo
+docker-compose build
+docker-compose up -d
 ``` 
--->
+
+
+<img src="assets/2021-03-01-13-06-51.png" width="400">
 
 # Summary
 <!-- ### -  *[Quick start](#Quick-start)*
-### -  *[Installation](#Installation)*
-### -  *[For developers](#For-developers)* -->
+<!-- ### -  *[Installation](#Installation)* -->
+### -  *[For developers](#For-developers)*
 ### -  *[Contributors](#Contributors)*
 ### -  *[License](#License)*
 
 
-
-
 # Installation
+### 
+```bash
+cd ~
+git clone https://github.com/wisehackermonkey/webtorrent-demo.git
+cd webtorrent-demo
+docker-compose build
+docker-compose up -d
+```
+
+
+
+<!-- ----------------- -->
+<!-- # Screenshots -->
+<!-- - <img src="assets/_____________" width="400">  -->
+<!-- -  -->
+
+
+
+<!-- SETUP -->
+-----------------
+# For developers
 ```bash
  git clone https://github.com/wisehackermonkey/webtorrent-demo.git
 cd  webtorrent-demo/
@@ -44,17 +71,6 @@ http-server
 ```
 ### go to http://localhost:9966 or :8080
 
-
-<!-- ----------------- -->
-<!-- # Screenshots -->
-<!-- - <img src="assets/_____________" width="400">  -->
-<!-- -  -->
-
-
-
-<!-- SETUP -->
------------------
-# For developers
 ### setting up browserify
 [Getting Started with Browserify ― Scotch.io](https://scotch.io/tutorials/getting-started-with-browserify)
 ```bash
