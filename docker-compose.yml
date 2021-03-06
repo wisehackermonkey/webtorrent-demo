@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   webtorrentdemo:
+    restart: always
     image: webtorrentdemo
     build:
       context: .
