@@ -1,29 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>WebTorrent Demo</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <style>
-      h1, p, div { text-align: center; }
-      html       { background: #fffffe; }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h2>WebTorrent Demo.</h2>
 
-      <div class="well">
-        <h3>All the images on this website are hosted using WebTorrent</h3>
-        <br>
-        <h3>This webpage will scale really well if thousands of people are trying to access at the same time</h3>
+<head>
+  <title>WebTorrent Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+    h1,
+    p,
+    div {
+      text-align: center;
+    }
 
-        <div id="response" >
-        </div>
+    html {
+      background: #fffffe;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>WebTorrent Demo.</h2>
+
+    <div class="well">
+      <h3>All the images on this website are hosted using WebTorrent</h3>
+      <br>
+      <h3>This webpage will scale really well if thousands of people are trying to access at the same time</h3>
+      <br>
+      <h3>This is a proof of concept tech demo</h3>
+      <br>
+      <h3 style="white-space:pre">
+Created by oran collins
+github.com/wisehackermonkey
+oranbusiness gmailcom..
+20210306
+        </h3>
+      <div id="response">
       </div>
     </div>
-<!-- broswerfy buindled command -->
-<!-- cd public ; browserify --debug ../src/main.js -o bundle.js -->
-    <script src="js/bundle.js"></script>
-  </body>
+  </div>
+  <!-- broswerfy buindled command -->
+  <!-- cd public ; browserify --debug ../src/main.js -o bundle.js -->
+  <script src="js/bundle.js"></script>
+  <div>
+    <torrentholder>
+      <h2>Loading the torrent images could take up to 10 seconds, Please wait....</h2>
+    </torrentholder>
+  </div>
+</body>
+
 </html>

@@ -24,5 +24,5 @@ client.add(torrentId, function (torrent) {
         console.log('Client is seeding ' + torrent.magnetURI)
     })
   // Display the file by adding it to the DOM. Supports video, audio, image, etc. files
-  file.appendTo('body')
+  file.appendTo('torrentholder')
 })
